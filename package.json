@@ -1,17 +1,19 @@
 {
-  "name": "Scrim-s05rqc4",
-  "description": "https://scrimba.com/fullstack-path-c0fullstack/~0xrr/s0ckaljtmu/head",
+  "name": "scrim-s05rqc4",
+  "version": "1.0.0",
+  "description": "PollyGlot AI Translator Project",
+  "type": "module",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
+    "start": "node --env-file=.env server.js",
+    "dev": "node --env-file=.env --watch server.js",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "marked": "18.0.3",
-    "dompurify": "3.4.2",
-    "openai": "6.37.0",
-    "Express": "3.0.1",
+    "express": "^5.2.1",
+    "openai": "^6.37.0",
+    "marked": "^18.0.3",
+    "dompurify": "^3.4.2",
     "vite": "latest"
   },
   "devDependencies": {}
