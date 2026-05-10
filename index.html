@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Polyglot AI Translator</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <main class="container">
+            <!-- 1. Header and Mascot -->
+            <header>
+                <img src="assets/parrot.png" alt="Polly the Polyglot Parrot" id="mascot">
+                <h1>PollyGlot</h1>
+                <p>Perfect Translation Every Time</p>
+            </header>
+
+
+            <!-- 2. Input Section -->
+            <form id="translator-form">
+            <section class="input-area">
+                <label for="user-input">Text to translate 👇</label>
+                <textarea id="user-input" placeholder="How are you doing today?"></textarea>
+            </section>
+
+            <!-- 3. Selection Section -->
+            <section class="controls">
+                <div class="selection-box">
+                    <label>Select language:</label>
+                    <div class="options-wrapper">
+                        <!-- Dropdown list of options -->
+                        <select id="language-picker">
+                            <option value="French">French 🇫🇷</option>
+                            <option value="Spanish">Spanish 🇪🇸</option>
+                            <option value="Japanese">Japanese 🇯🇵</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" id="translate-btn">Translate</button>
+            </section>
+
+            <!-- 4. Output Section -->
+            <section id="output-container" class="output-container">
+                <div id="output-content">
+                    <!-- AI response will be injected here -->
+                    <p class="placeholder-text">Your translation will appear here...</p>
+                </div>
+            </section>
+            </form>
+        </main>
+
+        <!-- Script must be at the bottom of the body -->
+        <script src="index.js" type="module"></script>
+    </body>
+</html>
