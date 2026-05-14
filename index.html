@@ -1,53 +1,49 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Polyglot AI Translator</title>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <main class="container">
-            <!-- 1. Header and Mascot -->
-            <header>
-                <img src="assets/parrot.png" alt="Polly the Polyglot Parrot" id="mascot">
-                <h1>PollyGlot</h1>
-                <p>Perfect Translation Every Time</p>
-            </header>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ironi | Urban Renewal AI</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- Google Fonts for a premium look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="chat-container">
+        <!-- Header: Stays fixed at the top -->
+        <header class="chat-header">
+            <div class="logo-circle">🏙️</div>
+            <div class="header-text">
+                <h1>Ironi AI</h1>
+                <p>Urban Renewal Partner</p>
+            </div>
+        </header>
 
+        <!-- 💬 Message Window: Where the bubbles will appear -->
+        <section id="chat-window" class="chat-window">
+            <!-- Messages will be injected here by index.js -->
+            <div class="message assistant-message">
+                Hello! I am your Ironi Assistant. How can I help you with your TAMA 38 or Pinui Binui project today?
+            </div>
+        </section>
 
-            <!-- 2. Input Section -->
-            <form id="translator-form">
-            <section class="input-area">
-                <label for="user-input">Text to translate 👇</label>
-                <textarea id="user-input" placeholder="How are you doing today?"></textarea>
-            </section>
-
-            <!-- 3. Selection Section -->
-            <section class="controls">
-                <div class="selection-box">
-                    <label>Select language:</label>
-                    <div class="options-wrapper">
-                        <!-- Dropdown list of options -->
-                        <select id="language-picker">
-                            <option value="French">French 🇫🇷</option>
-                            <option value="Spanish">Spanish 🇪🇸</option>
-                            <option value="Japanese">Japanese 🇯🇵</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" id="translate-btn">Translate</button>
-            </section>
-
-            <!-- 4. Output Section -->
-            <section id="output-container" class="output-container">
-                <div id="output-content">
-                    <!-- AI response will be injected here -->
-                    <p class="placeholder-text">Your translation will appear here...</p>
-                </div>
-            </section>
+        <!-- ⌨️ Input Bar: Fixed at the bottom -->
+        <footer class="input-area">
+            <form id="chat-form" class="chat-form">
+                <textarea 
+                    id="user-input" 
+                    placeholder="Ask about your project..." 
+                    rows="1"
+                ></textarea>
+                <button type="submit" id="send-btn" title="Send message">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M11 13L2 9L22 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
             </form>
-        </main>
+        </footer>
+    </main>
 
-        <!-- Script must be at the bottom of the body -->
-        <script src="index.js" type="module"></script>
-    </body>
+    <script type="module" src="index.js"></script>
+</body>
 </html>

@@ -1,134 +1,145 @@
-/* 1. Global Setup */
+/* index.css */
+
+:root {
+    --primary-blue: #0056b3;
+    --background-gray: #f7f9fc;
+    --user-bubble: #007bff;
+    --ai-bubble: #ffffff;
+    --text-dark: #333333;
+    --border-color: #e0e0e0;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif; /* Modern, clean font */
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-color: #f0f4f8;
+    background-color: var(--background-gray);
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    height: 100vh; /* Fill the whole screen */
 }
 
-/* 2. Main Container Card */
-.container {
+/* 🏗️ Main Container: Full Screen Flexbox */
+.chat-container {
+    width: 100%;
+    max-width: 800px; /* Great for MacBook Pro viewing */
     background: white;
-    width: 100%;
-    max-width: 450px;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    text-align: center;
-}
-
-/* 3. Header & Mascot */
-header {
-    margin-bottom: 30px;
-}
-
-#mascot {
-    width: 100px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-h1 {
-    color: #2d3436;
-    font-size: 2rem;
-    letter-spacing: -1px;
-}
-
-header p {
-    color: #636e72;
-    font-size: 0.9rem;
-}
-
-/* 4. Input Area */
-.input-area {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #2d3436;
-}
-
-textarea {
-    width: 100%;
-    height: 120px;
-    padding: 15px;
-    border: 2px solid #dfe6e9;
-    border-radius: 12px;
-    resize: none; /* Keeps the UI clean */
-    font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-textarea:focus {
-    outline: none;
-    border-color: #0984e3; /* Nice blue focus state */
-}
-
-/* 5. Controls (Dropdown & Button) */
-.controls {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-.selection-box {
-    text-align: left;
+/* 🏙️ Sticky Header */
+.chat-header {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    background: white;
 }
 
-select {
-    width: 100%;
-    padding: 12px;
-    border: 2px solid #dfe6e9;
-    border-radius: 10px;
-    background: #fdfdfd;
-    cursor: pointer;
+.logo-circle {
+    font-size: 2rem;
+    background: #e9ecef;
+    padding: 0.5rem;
+    border-radius: 50%;
 }
 
-button {
-    background-color: #0984e3;
+.chat-header h1 {
+    font-size: 1.25rem;
+    color: var(--primary-blue);
+}
+
+/* 💬 The Conversation Area (Scrollable) */
+.chat-window {
+    flex: 1; /* Grows to fill available space */
+    overflow-y: auto; /* Adds the scrollbar */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #fdfdfd;
+}
+
+/* 🧼 Message Bubbles */
+.message {
+    max-width: 80%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 18px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: var(--user-bubble);
+    color: white;
+    border-bottom-right-radius: 4px; /* The "tail" */
+}
+
+.assistant-message {
+    align-self: flex-start;
+    background-color: var(--ai-bubble);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    border-bottom-left-radius: 4px; /* The "tail" */
+}
+
+/* ⌨️ Bottom Input Area */
+.input-area {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    background: white;
+}
+
+.chat-form {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-end;
+    background: #f1f3f5;
+    padding: 0.5rem 1rem;
+    border-radius: 24px;
+}
+
+#user-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0.5rem;
+    resize: none; /* No manual resizing */
+    max-height: 150px;
+    outline: none;
+    font-size: 1rem;
+}
+
+/* 🚀 Send Button */
+#send-btn {
+    background: var(--primary-blue);
     color: white;
     border: none;
-    padding: 15px;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: transform 0.1s, background-color 0.2s;
+    transition: transform 0.2s, background 0.2s;
+    flex-shrink: 0;
+    margin-bottom: 4px;
 }
 
-button:hover {
-    background-color: #074b83;
+#send-btn:hover {
+    background: #004494;
+    transform: scale(1.1);
 }
 
-button:active {
-    transform: scale(0.98); /* Tactile click feel */
-}
-
-/* 6. Output Container */
-.output-container {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f9f9fb;
-    border-radius: 12px;
-    border-left: 4px solid #0984e3;
-    text-align: left;
-    min-height: 60px;
-}
-
-.placeholder-text {
-    color: #b2bec3;
-    font-style: italic;
+#send-btn svg {
+    width: 18px;
+    height: 18px;
 }
